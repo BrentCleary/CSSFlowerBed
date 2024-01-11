@@ -17,14 +17,17 @@ function GenerateCards()
   for (let i = 0; i < 5; i++)
   {
     let tableRow = document.importNode(displayTemplate.content, true);
-
     let rowCols = tableRow.querySelectorAll("td");
 
-    rowCols[0] = firstCard;
-    rowCols[1] = firstCard;
-    rowCols[2] = firstCard;
-    rowCols[3] = firstCard;
-    rowCols[4] = firstCard;
+    for (let j = 0; j < 5; j++)
+    {
+      // clone the original div element
+      let clonedCard = firstCard.cloneNode(true);
+
+      // Insert the cloned div into the table cell
+      rowCols[j].appendChild(clonedCard);
+      
+    }
 
     tableBody.appendChild(tableRow);
   }
