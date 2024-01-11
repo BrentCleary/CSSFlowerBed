@@ -26,7 +26,7 @@
   <!-- ====== NAV SECTION ====== -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
-          <a class="navbar-brand" href="/"><img src="img/LogoFavicon.jpg" class="d-inline-block align-text-top" width="30" height="24" alt="Brent Cleary Logo"> App Name</a>
+          <a class="navbar-brand" href="/"><img src="img/LogoFavicon.jpg" class="d-inline-block align-text-top" width="30" height="24" alt="Brent Cleary Logo"> Loan Shark</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
               aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -43,7 +43,7 @@
                       <a class="nav-link" href="code.html">The Code</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="https://github.com/BrentCleary/CSSFlowerBed">Git Repo</a>
+                    <a class="nav-link" target="_blank" href="https://github.com/BrentCleary/LoanSharkJs">Git Repo</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" target="_blank" href="https://brentcleary-portfolio.netlify.app/">About</a>
@@ -52,10 +52,64 @@
           </div>
       </div>
   </nav>
+  
   <!-- ====== MAIN SECTION ====== -->
   <main class="flex-shrink-0">
     <div class="container">
+      <div class="row row-cols-1 row-cols-md-2 m-5 p-3 gy-3 gx-5">
 
+        <!-- Input Form -->
+        <div class="col border border-1 border-dark rounded">
+          <h1>Plant Selector</h1>
+          <form class="bg bg-light p-2 mb-3">
+            <div>
+              <div class="form-label font-weight-bold">Plant Id</div>
+              <input class="form-control" value="0" id="plantId" type="number">
+            </div>
+            <div class="d-flex justify-content-end">
+              <button class="btn btn-dark mt-2" type="button" id="btnSubmit">Grow</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Display Box -->
+        <div class="col text-center">
+          <div class="italic text-center m-1">
+            <h3>Your Plant Selection</h3>
+          </div>
+          <div class="display-1 m-3" id="plantDisplay">
+            <div class="display-5">
+
+              <!-- Plant Display Card -->
+              <div class="container d-flex justify-content-center" id="firstCard">
+                <div class="card border border-1 border-dark text-center" style="width: 16rem;">
+                  <img class="card-img-top" id="plantImage" src="https://images.pexels.com/photos/1632790/pexels-photo-1632790.jpeg?cs=srgb&dl=pexels-johannes-plenio-1632790.jpg&fm=jpg" alt="Tree Image">
+                  <div class="card-body">
+                    <h1 class="card-title">Here is a tree</h1>
+                    <p class="card-text">It's on me</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interest Payment Template -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <tbody id="tableDisplay">
+
+                <!-- Insert Data Here -->
+              
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
@@ -81,6 +135,26 @@
     </div>
   </footer>
 
+  <template id="cardTemplate">
+    <div class="card border border-info" style="width: 16rem; height: 8rem;">
+      <img class class="card-img-top" src="" alt="">
+      <div class="card-body">
+        <h1 class="card-title">Hello</h1>
+        <p class="card-text"></p>
+      </div>
+    </div>
+  </template>
+
+  <template id="displayTemplate">
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </template>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
@@ -88,6 +162,10 @@
 
   <!-- JS Script -->
   <script src="js/site.js"></script>
+
+  <script>
+    document.getElementById("btnSubmit").addEventListener("click", GenerateCards);
+  </script>
 
 </body>
 
