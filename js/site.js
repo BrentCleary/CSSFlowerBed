@@ -8,16 +8,15 @@ function GetUserInput()
 
 function GenerateCards()
 {
-  // card Template Assignment
-  let cardTemplate = document.getElementById("cardTemplate");
+  let tableBody = document.getElementById("tableDisplay");
 
   let displayTemplate = document.getElementById("displayTemplate");
 
   let firstCard = document.getElementById("firstCard");
 
-  for (let i = 0; i < 5; i++) {
-    
-    let tableRow = document.importNode(displayTemplate.contentEditable, true);
+  for (let i = 0; i < 5; i++)
+  {
+    let tableRow = document.importNode(displayTemplate.content, true);
 
     let rowCols = tableRow.querySelectorAll("td");
 
@@ -26,6 +25,8 @@ function GenerateCards()
     rowCols[2] = firstCard;
     rowCols[3] = firstCard;
     rowCols[4] = firstCard;
+
+    tableBody.appendChild(tableRow);
   }
 
 }
