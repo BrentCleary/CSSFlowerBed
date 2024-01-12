@@ -40,12 +40,14 @@ function GenerateCards(gardenRowCols)
 
   let firstCard = document.getElementById("firstCard");
 
-  for (let i = 0; i < gardenRowCols.colNumber; i++)
+  tableBody.innerHTML = "";
+
+  for (let i = 0; i < gardenRowCols.rowNumber; i++)
   {
     let tableRow = document.importNode(displayTemplate.content, true);
     let rowCols = tableRow.querySelectorAll("td");
 
-    for (let j = 0; j < gardenRowCols.rowNumber; j++)
+    for (let j = 0; j < gardenRowCols.colNumber; j++)
     {
       // clone the original div element
       let clonedCard = firstCard.cloneNode(true);
