@@ -26,7 +26,7 @@
   <!-- ====== NAV SECTION ====== -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
-          <a class="navbar-brand" href="/"><img src="img/LogoFavicon.jpg" class="d-inline-block align-text-top" width="30" height="24" alt="Brent Cleary Logo"> Loan Shark</a>
+          <a class="navbar-brand" href="/"><img src="img/LogoFavicon.jpg" class="d-inline-block align-text-top" width="30" height="24" alt="Brent Cleary Logo"> FlowerBed</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
               aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -62,6 +62,14 @@
         <div class="col border border-1 border-dark rounded">
           <h1>Plant Selector</h1>
           <form class="bg bg-light p-2 mb-3">
+            <div>
+              <div class="form-label font-weight-bold">Number of Columns</div>
+              <input class="form-control" value="1" id="colNumber" type="number">
+            </div>
+            <div>
+              <div class="form-label font-weight-bold">Number of Rows</div>
+              <input class="form-control" value="1" id="rowNumber" type="number">
+            </div>
             <div>
               <div class="form-label font-weight-bold">Plant Id</div>
               <input class="form-control" value="0" id="plantId" type="number">
@@ -165,7 +173,7 @@
   <script src="js/site.js"></script>
 
   <script>
-    document.getElementById("btnSubmit").addEventListener("click", GenerateCards);
+    document.getElementById("btnSubmit").addEventListener("click", GrowTrees);
   </script>
 
 </body>
